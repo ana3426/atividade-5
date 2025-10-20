@@ -1,0 +1,42 @@
+area_total = 0.0
+
+def calcular_area_comodo():
+    global area_total  # Permite modificar a variável global
+    
+    while True:
+        nome_comodo = input("Digite o nome do cômodo: ")
+        
+        try:
+            largura = float(input("Digite a largura do cômodo em metros: "))
+            comprimento = float(input("Digite o comprimento do cômodo em metros: "))
+            if largura <= 0 or comprimento <= 0:
+                print("Erro: Largura e comprimento devem ser valores positivos. Tente novamente.")
+                continue
+
+            area_comodo = largura * comprimento
+            area_total += area_comodo
+            
+            print(f"Cômodo: {nome_comodo} -> {largura:.1f} x {comprimento:.1f} = {area_comodo:.1f} m²")
+            break
+        except ValueError:
+            print("Entrada inválida. Por favor, digite apenas números para largura e comprimento.")
+
+def main():
+    
+    while True:
+        calcular_area_comodo()
+        
+        while True:
+            continuar = input("Deseja continuar? (SIM/NAO): ").upper()
+            if continuar in ["SIM", "NAO"]:
+                break
+            else:
+                print("Resposta inválida. Por favor, digite 'SIM' ou 'NAO'.")
+        
+        if continuar == "NAO":
+            break
+
+    print(f"\nÁrea Total = {area_total:.1f} m²")
+
+if __name__ == "__main__":
+    main()

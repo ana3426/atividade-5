@@ -1,0 +1,22 @@
+total_consumido = 0
+contador_leituras = 0
+while True:
+    try:
+        leitura = float(input())
+        if leitura < 0:
+            break
+        total_consumido += leitura
+        contador_leituras += 1
+    except ValueError:
+        print("Entrada inválida. Digite um número.")
+        continue
+if contador_leituras > 0:
+    media = total_consumido / contador_leituras
+    print(f"Total consumido = {total_consumido:.2f} L")
+    print(f"Leituras = {contador_leituras}")
+    print(f"Média = {media:.2f} L")
+else:
+    print("Nenhuma leitura válida foi registrada.")
+    print("Total consumido = 0 L")
+    print("Leituras = 0")
+    print("Média = Indisponível")

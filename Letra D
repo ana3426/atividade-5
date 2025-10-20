@@ -1,0 +1,9 @@
+total_acumulado = 0
+armazenamento_diario = 1  # 1 MB no primeiro dia
+dias = 64
+
+for _ in range(dias):
+  total_acumulado += armazenamento_diario
+  armazenamento_diario *= 2
+
+print(total_acumulado)

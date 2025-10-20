@@ -1,0 +1,3 @@
+for lado in range(15, 201): # O range vai de 15 até 200 (o 201 é exclusivo)
+    area = lado * lado
+    print(f"lado={lado} → area={area}")

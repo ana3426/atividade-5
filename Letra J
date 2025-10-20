@@ -1,0 +1,24 @@
+def irrigar_por_balde(dividendo, divisor):
+    """
+    Simula a irrigação por balde, calculando a divisão inteira por subtrações sucessivas.
+    
+    Args:
+        dividendo (int): O volume do reservatório em litros.
+        divisor (int): A capacidade do balde em litros.
+        
+    Returns:
+        None: Exibe o resultado diretamente na saída.
+    """
+    
+    if divisor <= 0:
+        print("Erro: A capacidade do balde (divisor) deve ser maior que zero.")
+        return
+
+    quociente = 0
+    resto = dividendo
+
+    while resto >= divisor:
+        resto -= divisor
+        quociente += 1
+
+    print(f"Quociente = {quociente}, Resto = {resto}")
